@@ -4,7 +4,7 @@ import { AboutPage } from './pages/AboutPage';
 import { BlogPage } from './pages/BlogPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { HomePage } from './pages/HomePage'
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { SinglePage } from './pages/SinglePage';
 import { CreatePost } from './pages/CreatePost';
@@ -34,7 +34,10 @@ function App() {
             <RequireAuth>
               <CreatePost />
             </RequireAuth>} />
-          <Route path='about' element={<AboutPage />} />
+          <Route path='about/*' element={<AboutPage />}>
+            <Route path="contacts" element={<p>Our contact</p>} />
+            <Route path="team" element={<h1>Our team</h1>} />
+          </Route>
           <Route path='login' element={<LoginPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
