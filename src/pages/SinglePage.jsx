@@ -19,11 +19,11 @@ const Comments = () => {
         <div>
             <h2>Comments</h2>
             {comments.map(comment =>(
-                <>
+                <div key={comment.id}>
                 <h3>{comment.email}</h3>
                 <h4>{comment.name}</h4>
                 <p>{comment.body}</p>
-                </>
+                </div>
             ))}
         </div>
     )
@@ -41,7 +41,7 @@ const SinglePage = () => {
     return (
         <div>
             <button onClick={goBack}>go back</button>
-
+           
             <CustomButton to={'/'}>go home</CustomButton>
             <Suspense fallback={<h2>Post is loading...</h2>}>
                 <Await resolve={post}>

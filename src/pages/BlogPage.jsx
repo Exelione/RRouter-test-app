@@ -46,12 +46,23 @@ const BlogPage = () => {
     )
 }
 async function getPosts() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    
+    if (!res.ok) {
+
+       throw new Response('', {status: res.status, statusText: 'Not Found!'})
+    }
     return res.json()
 }
 const BlogLoader = async () => {
+    const posts = getPosts()
+    
+    // if (!posts.length){
+
+    //     throw json({message: 'Not Found', reason: 'Wrong url'}, {status: 404, statusText: 'Not Found!'})
+    // }
     return defer({
-        posts: getPosts()
+        posts
     })
 
 
