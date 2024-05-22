@@ -20,7 +20,7 @@ export const BlogFilter = ({ setSearchParams, postQuery, latest }) => {
     }
 
     return (
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete='off' onSubmit={handleSubmit}>
             <input type="search" name="search" value={search} onChange={event => setSearch(event.target.value)} />
             <label style={{ padding: '0 1rem' }}>
                 <input type="checkbox" name="latest" checked={checked} onChange={event => setChecked(event.target.checked)} /> New only
