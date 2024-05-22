@@ -28,24 +28,26 @@ header>a {
 header>a:hover {
   text-decoration: underline;
 }
-
-h1 {
+h1, h2, h3 {
   text-align: center;
+  margin-top: 0;
 }
+main {
+  min-height: calc(100vh - 85px - 22px);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 main a {
   text-decoration: none;
   color: var(--color-bg);
 }
 .container {
-  min-height: 76vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 900px;
-  padding: 2rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 0 auto;
 }
-
 footer {
   background-color: var(--color-bg);
   padding: 2rem 0;
@@ -61,16 +63,36 @@ footer {
   text-decoration: none;
 }
 button{
-  padding: 8px;
-  margin-bottom: 18px; 
+  
+  margin: 18px; 
   color: var(--color-bg)
 }
 
 .CustomButton {
-  padding: 8px;
-  margin-bottom: 18px; 
+  
+  margin: 18px 0; 
 }
 .CustomButton a {
   text-decoration: none;
   color: var(--color-bg)
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+ }
+
+.form label {
+  margin: 8px;
+ 
+}
+
+.form label input {
+  margin-left: 8px;
+ 
+}
+.form textarea {
+  padding: .5rem;
+  margin-left: 8px;
 }

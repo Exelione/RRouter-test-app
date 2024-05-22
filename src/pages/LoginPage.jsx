@@ -8,7 +8,7 @@ export const LoginPage = () => {
     const location = useLocation();
     const {signIn} = useAuth();
     const fromPage = location.state?.from?.pathname || '/';
-
+    const goBack = () => navigate(-1)
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -18,6 +18,7 @@ export const LoginPage = () => {
 
   return (
     <div>
+        <button onClick={goBack}>go back</button>
         <h1>Login page</h1>
         <form onSubmit={handleSubmit}>
             <label>

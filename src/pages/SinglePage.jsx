@@ -53,7 +53,7 @@ const SinglePage = () => {
                     <Comments/>
                 </Await>
             </Suspense>
-            <Link to={`/posts/${id}/edit`}>Edit this post</Link>
+            <Link to={`/posts/${id}/edit`} >Edit this post</Link>
         </div>
 
     )
